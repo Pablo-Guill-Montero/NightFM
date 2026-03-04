@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 726bcbb9aa10f234a805cee14d5f13a6
+guid: a95645c6b2cfd1543b8172c36e7ca7a0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1875917246518206917
-    second: radio_0
+      213: 1963964960840314581
+    second: Infinity_Permanent Marker__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: radio_0
+      name: Infinity_Permanent Marker__0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1317
-        height: 1011
+        width: 210
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c12fb2fbc8980a10800000000000000
-      internalID: 1875917246518206917
+      spriteID: 5de6332f9b7614b10800000000000000
+      internalID: 1963964960840314581
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      radio_0: 1875917246518206917
+      Infinity_Permanent Marker__0: 1963964960840314581
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

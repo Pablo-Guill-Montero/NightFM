@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 726bcbb9aa10f234a805cee14d5f13a6
+guid: 3b5a08c64f1735144bf24c0e70d483ad
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1875917246518206917
-    second: radio_0
+      213: -8687706752228147399
+    second: Estrella_rellena_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: radio_0
+      name: Estrella_rellena_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1317
-        height: 1011
+        width: 36
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c12fb2fbc8980a10800000000000000
-      internalID: 1875917246518206917
+      spriteID: 93fbda00db01f6780800000000000000
+      internalID: -8687706752228147399
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      radio_0: 1875917246518206917
+      Estrella_rellena_0: -8687706752228147399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

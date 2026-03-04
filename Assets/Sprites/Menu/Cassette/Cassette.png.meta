@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 726bcbb9aa10f234a805cee14d5f13a6
+guid: aab56264f27512e4b967ce11cb7207b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1875917246518206917
-    second: radio_0
+      213: 4535809750988552855
+    second: Cassette_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: radio_0
+      name: Cassette_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1317
-        height: 1011
+        width: 449
+        height: 289
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c12fb2fbc8980a10800000000000000
-      internalID: 1875917246518206917
+      spriteID: 79afc60dfee62fe30800000000000000
+      internalID: 4535809750988552855
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      radio_0: 1875917246518206917
+      Cassette_0: 4535809750988552855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
