@@ -1,9 +1,9 @@
 using UnityEngine;
 using TMPro;
 
-public class ResoSelector : MonoBehaviour
+public class ResolucionController : MonoBehaviour
 {
-    public TextMeshProUGUI textoResolucion;
+    public  TextMeshProUGUI textoResolucion;
     private Resolution[] resoluciones;
     private int indiceActual = 0;
 
@@ -17,6 +17,7 @@ public class ResoSelector : MonoBehaviour
                 resoluciones[i].height == Screen.currentResolution.height) {
                 indiceActual = i;
             }
+            Debug.Log("Resolución añadida: " + resoluciones[i].width + " x " + resoluciones[i].height);
         }
         ActualizarInterfaz();
     }
@@ -35,6 +36,7 @@ public class ResoSelector : MonoBehaviour
     void AplicarYActualizar() {
         Resolution res = resoluciones[indiceActual];
         Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+        Debug.Log("Resolución aplicada: " + res.width + " x " + res.height);
         ActualizarInterfaz();
     }
 

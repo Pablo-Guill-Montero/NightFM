@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cd8e2bcfba26f9449e856ea81649ac3, type: 3}
+  m_Name: Data_Lvl_Menu_02
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CassetteMenu
+  nombreNivel: Rhythm
+  imagenNombre: {fileID: 21300000, guid: 2a20f84e35ccd4d4e8ee0391c3900b2f, type: 3}
+  estrellasLogradas: 1
+  cancionAsociada: {fileID: 8300000, guid: 6d4483e9ab1c0144798a6a2c17521468, type: 3}
