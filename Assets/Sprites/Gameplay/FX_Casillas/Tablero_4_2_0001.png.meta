@@ -141,12 +141,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 689
-        y: 557
+        y: 558
         width: 189
-        height: 65
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 1, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -162,12 +162,12 @@ TextureImporter:
       name: Tablero_4_2_0001_1
       rect:
         serializedVersion: 2
-        x: 879
-        y: 557
-        width: 162
-        height: 65
+        x: 880
+        y: 558
+        width: 160
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,12 +184,12 @@ TextureImporter:
       name: Tablero_4_2_0001_2
       rect:
         serializedVersion: 2
-        x: 1042
-        y: 557
-        width: 189
-        height: 65
+        x: 1043
+        y: 558
+        width: 187
+        height: 63
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +206,12 @@ TextureImporter:
       name: Tablero_4_2_0001_3
       rect:
         serializedVersion: 2
-        x: 659
-        y: 462
-        width: 211
-        height: 88
+        x: 660
+        y: 463
+        width: 209
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -228,12 +228,12 @@ TextureImporter:
       name: Tablero_4_2_0001_4
       rect:
         serializedVersion: 2
-        x: 870
-        y: 463
-        width: 180
-        height: 86
+        x: 871
+        y: 464
+        width: 178
+        height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,12 +250,12 @@ TextureImporter:
       name: Tablero_4_2_0001_5
       rect:
         serializedVersion: 2
-        x: 1050
-        y: 462
-        width: 211
-        height: 88
+        x: 1051
+        y: 463
+        width: 209
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,12 +272,12 @@ TextureImporter:
       name: Tablero_4_2_0001_6
       rect:
         serializedVersion: 2
-        x: 626
-        y: 362
-        width: 236
-        height: 93
+        x: 627
+        y: 363
+        width: 234
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Tablero_4_2_0001_7
       rect:
         serializedVersion: 2
-        x: 860
-        y: 362
-        width: 200
-        height: 93
+        x: 861
+        y: 363
+        width: 198
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -316,12 +316,12 @@ TextureImporter:
       name: Tablero_4_2_0001_8
       rect:
         serializedVersion: 2
-        x: 1058
-        y: 362
-        width: 236
-        height: 93
+        x: 1059
+        y: 363
+        width: 234
+        height: 91
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,7 +338,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ec1f9bf232661a0438a00296b660bf15
     internalID: 0
     vertices: []
     indices: 
