@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     
     [Header("Referencias UI")]
     [SerializeField] private CanvasGroup canvasGroup;
-    [SerializeField] private Slider progressBar; // Arrastra tu Slider aquí
+    [SerializeField] private Slider progressBar;
     [SerializeField] private float fadeDuration = 0.5f;
 
     private void Awake()
@@ -29,7 +29,7 @@ public class SceneLoader : MonoBehaviour
         {
             Debug.Log("Ya hay una instancia, destruyendo duplicado.");
             Destroy(gameObject);
-            return; // <--- ESTO ES VITAL
+            return;
         }
     }
 
