@@ -15,4 +15,11 @@ MonoBehaviour:
   nombreNivel: Infinity
   imagenNombre: {fileID: 21300000, guid: a95645c6b2cfd1543b8172c36e7ca7a0, type: 3}
   estrellasLogradas: 2
-  cancionAsociada: {fileID: 8300000, guid: 044b82d02f7747f40b3650963871231d, type: 3}
+  cancionAsociada:
+    Guid:
+      Data1: -2075849317
+      Data2: 1106651596
+      Data3: 1926142390
+      Data4: -1706923971
+    Path: event:/Music/Music_Infinity
+  parameterValue: 0

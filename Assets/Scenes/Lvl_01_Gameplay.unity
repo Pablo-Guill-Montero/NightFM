@@ -2342,6 +2342,66 @@ PrefabInstance:
       propertyPath: _confirmExitCanvas
       value: 
       objectReference: {fileID: 465502048}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: pauseSnapshot.Path
+      value: snapshot:/Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: radioSnapshot.Path
+      value: snapshot:/Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: normalSnapshot.Path
+      value: snapshot:/Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: pauseSnapshot.Guid.Data1
+      value: -270501548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: pauseSnapshot.Guid.Data2
+      value: 1332566011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: pauseSnapshot.Guid.Data3
+      value: 2072822179
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: pauseSnapshot.Guid.Data4
+      value: -1872217520
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: radioSnapshot.Guid.Data1
+      value: 769802623
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: radioSnapshot.Guid.Data2
+      value: 1297521708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: radioSnapshot.Guid.Data3
+      value: -142385776
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: radioSnapshot.Guid.Data4
+      value: -1849455658
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: normalSnapshot.Guid.Data1
+      value: 971220584
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: normalSnapshot.Guid.Data2
+      value: 1157241166
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: normalSnapshot.Guid.Data3
+      value: -917380705
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: normalSnapshot.Guid.Data4
+      value: -1214283251
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5317,7 +5377,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 759827649}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3687664492314986140, guid: 5ef490640132c2e4e937f33528046a26, type: 3}
+    - {fileID: 2546370701780909900, guid: 5ef490640132c2e4e937f33528046a26, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

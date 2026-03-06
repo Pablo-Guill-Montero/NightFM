@@ -15,4 +15,11 @@ MonoBehaviour:
   nombreNivel: Rhythm
   imagenNombre: {fileID: 21300000, guid: 2a20f84e35ccd4d4e8ee0391c3900b2f, type: 3}
   estrellasLogradas: 1
-  cancionAsociada: {fileID: 8300000, guid: 6d4483e9ab1c0144798a6a2c17521468, type: 3}
+  cancionAsociada:
+    Guid:
+      Data1: -1867828135
+      Data2: 1130932158
+      Data3: 629879221
+      Data4: -779320842
+    Path: event:/Music/Music_Rythm
+  parameterValue: 1

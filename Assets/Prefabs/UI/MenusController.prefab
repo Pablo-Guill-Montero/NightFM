@@ -46,4 +46,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenusController
   _confirmExitCanvas: {fileID: 0}
   _mainMenuCanvas: {fileID: 0}
-  _audioMixer: {fileID: 24100000, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
+  radioSnapshot:
+    Guid:
+      Data1: 769802623
+      Data2: 1297521708
+      Data3: -142385776
+      Data4: -1849455658
+    Path: snapshot:/Menu
+  normalSnapshot:
+    Guid:
+      Data1: 971220584
+      Data2: 1157241166
+      Data3: -917380705
+      Data4: -1214283251
+    Path: snapshot:/Gameplay
+  pauseSnapshot:
+    Guid:
+      Data1: -270501548
+      Data2: 1332566011
+      Data3: 2072822179
+      Data4: -1872217520
+    Path: snapshot:/Pause

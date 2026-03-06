@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9159491732654568394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/Pause
+  Guid:
+    Data1: -270501548
+    Data2: 1332566011
+    Data3: 2072822179
+    Data4: -1872217520
+  Banks:
+  - {fileID: 2719846098428173746}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-7307201086018331446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +150,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 639084184956070570
+  lastModified: 639084288959678595
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -152,13 +179,16 @@ MonoBehaviour:
   - {fileID: -6371076363953066271}
   - {fileID: 8870351376586135136}
   - {fileID: 1209776617704363101}
+  - {fileID: -9159491732654568394}
+  - {fileID: 3690553811901361524}
+  - {fileID: 5288110315160196049}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2719846098428173746}
   StringsBanks:
   - {fileID: 1531106095627207397}
   cacheVersion: 131858
-  cacheTime: 639084184956070570
+  cacheTime: 639084288959678595
   SerializableEventsDict:
   - key: event:/Music/Music_Rythm
     index: 0
@@ -176,6 +206,12 @@ MonoBehaviour:
     index: 6
   - key: event:/UI/UI_Press
     index: 7
+  - key: snapshot:/Pause
+    index: 8
+  - key: snapshot:/Gameplay
+    index: 9
+  - key: snapshot:/Menu
+    index: 10
 --- !u!114 &1209776617704363101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,10 +254,10 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639084184900782857
+  lastModified: 639084288958878413
   FileSizes:
   - Name: 
-    Value: 1208
+    Value: 1524
   Exists: 1
 --- !u!114 &2719846098428173746
 MonoBehaviour:
@@ -238,7 +274,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639084184900762845
+  lastModified: 639084288958868411
   FileSizes: []
   Exists: 1
 --- !u!114 &2999337431258674754
@@ -265,6 +301,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3690553811901361524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Gameplay
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/Gameplay
+  Guid:
+    Data1: 971220584
+    Data2: 1157241166
+    Data3: -917380705
+    Data4: -1214283251
+  Banks:
+  - {fileID: 2719846098428173746}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &4334934710332165389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,9 +343,36 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639084184949799156
+  lastModified: 639084288959408534
   FileSizes: []
   Exists: 1
+--- !u!114 &5288110315160196049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/Menu
+  Guid:
+    Data1: 769802623
+    Data2: 1297521708
+    Data3: -142385776
+    Data4: -1849455658
+  Banks:
+  - {fileID: 2719846098428173746}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5652135722273921795
 MonoBehaviour:
   m_ObjectHideFlags: 0

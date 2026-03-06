@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 323408714715718505}
   - component: {fileID: 8089757612549852933}
   - component: {fileID: 918902023433247839}
-  - component: {fileID: 9170294989640501159}
+  - component: {fileID: 1765777882293732089}
   - component: {fileID: 4039658551090409910}
   - component: {fileID: 5104294973976019458}
   m_Layer: 5
@@ -955,8 +955,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 88f2fda059177ba42b974e7f5d80c5cb, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1765777882293732089}
+        m_TargetAssemblyTypeName: Btn_OnClick_LoadLvl, Assembly-CSharp
+        m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -965,8 +977,8 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: Lvl_01_Gameplay
           m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &9170294989640501159
+        m_CallState: 0
+--- !u!114 &1765777882293732089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -975,26 +987,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1046828590494548420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: 21ab45bcc8e1de6499a5ddb17d82fe9b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: PlayOneShot
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 8300000, guid: 16eaac6bfc044c741a666e2db97684a2, type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  m_EditorClassIdentifier: Assembly-CSharp::Btn_OnClick_LoadLvl
+  _levelName: Lvl_01_Gameplay
 --- !u!114 &4039658551090409910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2292,7 +2288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.32041895, y: 0.019534105}
   m_AnchorMax: {x: 0.65229726, y: 0.15280849}
-  m_AnchoredPosition: {x: 191, y: -34}
+  m_AnchoredPosition: {x: 191, y: -34.00006}
   m_SizeDelta: {x: -419, y: -113}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1585584134526002325
@@ -3893,13 +3889,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac58e7730774d7c4583eb5915ada7c6b, type: 2}
   - {fileID: 11400000, guid: e1ee73af934d27641b807f8085cb01fb, type: 2}
   _tituloSprite: {fileID: 6454777937659314338}
-  _audioSource: {fileID: 0}
   _estrellasUI:
   - {fileID: 9091196763726473856}
   - {fileID: 5648894373170838217}
   - {fileID: 7905599843520306631}
   _estrellaLlena: {fileID: 21300000, guid: 3b5a08c64f1735144bf24c0e70d483ad, type: 3}
   _estrellaVacia: {fileID: 21300000, guid: 00b062a522d97ef4f947bfdff845d04b, type: 3}
+  musicEvent:
+    Guid:
+      Data1: -470146428
+      Data2: 1341238302
+      Data3: 402917531
+      Data4: 541064831
+    Path: event:/Music/Music_UI
+  parameterName: Song
+  _parameterValue: 0
 --- !u!1 &8065443511709800678
 GameObject:
   m_ObjectHideFlags: 0

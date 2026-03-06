@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using FMODUnity;
+using FMOD.Studio;
 
 public class MenusController_Gameplay : MonoBehaviour
 {
@@ -13,10 +15,14 @@ public class MenusController_Gameplay : MonoBehaviour
     private CanvasGroup _FinPartidaCanvasGroup;
     private FinPartidaCanvasController _finPartidaController;
 
-    [SerializeField] private AudioMixer _audioMixer; // Referencia al AudioMixer para controlar el volumen
-    private AudioMixerSnapshot _snapshotPausa; // Snapshot para aplicar al abrir el menú de confirmación
-    private AudioMixerSnapshot _snapshotGameplay; // Snapshot para volver a la normalidad al cerrar el menú de confirmación
-    private AudioMixerSnapshot _snapshotMenu; // Snapshot para aplicar al salir al menú principal
+
+    // Arrastra el Snapshot desde la ventana de FMOD Event Browser al Inspector
+    public EventReference radioSnapshot; 
+    public EventReference normalSnapshot;
+    public EventReference pauseSnapshot;
+    private EventInstance radioSnapshotInstance;
+    private EventInstance normalSnapshotInstance;
+    private EventInstance pauseSnapshotInstance;
 
     void Start()
     {
@@ -30,11 +36,10 @@ public class MenusController_Gameplay : MonoBehaviour
 
         _finPartidaController = _finPartidaCanvas.GetComponent<FinPartidaCanvasController>();
 
-        // Obtenemos los snapshots del AudioMixer
-        _snapshotPausa = _audioMixer.FindSnapshot("Pausa");
-        _snapshotGameplay = _audioMixer.FindSnapshot("Gameplay");
-        _snapshotMenu = _audioMixer.FindSnapshot("Menu");
-
+        // Creamos la instancia del snapshot para poder controlarlo
+        radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
+        normalSnapshotInstance = RuntimeManager.CreateInstance(normalSnapshot);
+        pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
     }
 
     public void AbrirFin()
@@ -43,9 +48,10 @@ public class MenusController_Gameplay : MonoBehaviour
         _FinPartidaCanvasGroup.alpha = 1f;
         _FinPartidaCanvasGroup.interactable = true;
         _FinPartidaCanvasGroup.blocksRaycasts = true;
-        _snapshotPausa.TransitionTo(0.4f);
         // Mostramos el canvas de fin de partida y pausamos el juego
         _finPartidaController.MostrarFinPartida();
+
+        pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el canvas de fin de partida
     }
 
     public void AbrirMenuPausa()
@@ -54,9 +60,10 @@ public class MenusController_Gameplay : MonoBehaviour
         _pauseCanvasGroup.alpha = 1f;
         _pauseCanvasGroup.interactable = true;
         _pauseCanvasGroup.blocksRaycasts = true;
-        _snapshotPausa.TransitionTo(0.4f);
         // Aquí podrías agregar lógica adicional para pausar el juego, como detener el tiempo
         Time.timeScale = 0f; // Pausa el juego
+
+        pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el menú de pausa
     }
 
     public void CerrarMenuPausa()
@@ -66,9 +73,10 @@ public class MenusController_Gameplay : MonoBehaviour
         _pauseCanvasGroup.interactable = false;
         _pauseCanvasGroup.blocksRaycasts = false;
 
-        _snapshotGameplay.TransitionTo(0.4f); // Transición rápida para volver a la normalidad
         // Aquí podrías agregar lógica adicional para reanudar el juego, como reanudar el tiempo
         Time.timeScale = 1f; // Reanuda el juego
+
+        normalSnapshotInstance.start(); // Vuelve al snapshot normal al cerrar el menú de pausa
     }
 
     // Esta función activa la confirmación y bloquea el fondo
@@ -103,7 +111,7 @@ public class MenusController_Gameplay : MonoBehaviour
     {
         Debug.Log("Saliendo al menú principal...");
         Time.timeScale = 1f;
-        _snapshotMenu.TransitionTo(0f); 
+        radioSnapshotInstance.start();
         SceneLoader.Instance.LoadScene("Menu_Main");
     }
 

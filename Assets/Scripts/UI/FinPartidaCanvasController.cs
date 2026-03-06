@@ -11,10 +11,7 @@ public class FinPartidaCanvasController : MonoBehaviour
     [SerializeField] private Image[] estrellaImage; // Array de imágenes para mostrar las estrellas
     [SerializeField] private GameObject _canvas; 
     private CanvasGroup _canvasGroup; 
-    [SerializeField] private AudioMixer _audioMixer; // Referencia al AudioMixer para controlar el volumen
-    private AudioMixerSnapshot _snapshotMenu; // Snapshot para aplicar al salir al menú principal
-    private AudioMixerSnapshot _snapshotPausa; // Snapshot para aplicar al abrir el menú de confirmación
-    private AudioMixerSnapshot _snapshotGameplay; // Snapshot para volver a la normalidad al cerrar el menú de confirmación
+
     private int _estrellas = 0;
 
 
@@ -37,15 +34,11 @@ public class FinPartidaCanvasController : MonoBehaviour
     public void MostrarFinPartida()
     {
         _canvasGroup = _canvas.GetComponent<CanvasGroup>(); // Obtiene el CanvasGroup del canvas
-        _snapshotMenu = _audioMixer.FindSnapshot("Menu"); // Obtiene el snapshot para el menú
-        _snapshotPausa = _audioMixer.FindSnapshot("Pausa"); // Obtiene el snapshot para la pausa
-        _snapshotGameplay = _audioMixer.FindSnapshot("Gameplay"); // Obtiene el snapshot para
 
         gameObject.SetActive(true); // Muestra el canvas
         _canvasGroup.alpha = 1f; // Asegura que el canvas sea visible
         _canvasGroup.interactable = true; // Permite la interacción con el canvas
         _canvasGroup.blocksRaycasts = true; // Permite que el canvas bloquee los raycasts
-        _snapshotPausa.TransitionTo(0f); // Transición rápida para el menú
         Time.timeScale = 0f; // Pausa el juego
     }
 
@@ -54,7 +47,6 @@ public class FinPartidaCanvasController : MonoBehaviour
         Debug.Log("Saliendo al menú principal...");
         Time.timeScale = 1f;
         DesactivarCanvas();
-        _snapshotMenu.TransitionTo(0f); 
         SceneLoader.Instance.LoadScene("Menu_Main");
     }
 
@@ -63,7 +55,6 @@ public class FinPartidaCanvasController : MonoBehaviour
         Debug.Log("Reiniciando nivel...");
         Time.timeScale = 1f;
         DesactivarCanvas();
-        _snapshotGameplay.TransitionTo(0f);
         SceneLoader.Instance.LoadScene("Lvl_01_Gameplay");
     }
 

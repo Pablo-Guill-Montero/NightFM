@@ -24,7 +24,6 @@ public class MenusController : MonoBehaviour
     {
         // Aseguramos que el cuadro de confirmación esté oculto al iniciar
         _confirmExitCanvas.SetActive(false);
-        // Obtenemos los snapshots del AudioMixer
         _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
     
         // Creamos la instancia del snapshot para poder controlarlo
