@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Audio;
+using FMODUnity;
+using FMOD.Studio;
 
 public class MenusController : MonoBehaviour
 {
@@ -9,18 +10,35 @@ public class MenusController : MonoBehaviour
     [SerializeField] private CanvasGroup _mainMenuCanvas; // CanvasGroup para controlar la interacción del fondo
     private CanvasGroup _ConfirmExitCanvasGroup; // CanvasGroup del cuadro de confirmación para controlar su interacción
 
-    [SerializeField] private AudioMixer _audioMixer; // Referencia al AudioMixer para controlar el volumen
-    private AudioMixerSnapshot _snapshotExit; // Snapshot para aplicar al abrir el menú de confirmación
-    private AudioMixerSnapshot _snapshotNormal; // Snapshot para volver a la normalidad al cerrar el menú de confirmación
+    // Arrastra el Snapshot desde la ventana de FMOD Event Browser al Inspector
+    public EventReference radioSnapshot; 
+    public EventReference normalSnapshot;
+    public EventReference pauseSnapshot;
+
+    private EventInstance radioSnapshotInstance;
+    private EventInstance normalSnapshotInstance;
+    private EventInstance pauseSnapshotInstance;
+
 
     void Start()
     {
         // Aseguramos que el cuadro de confirmación esté oculto al iniciar
         _confirmExitCanvas.SetActive(false);
         // Obtenemos los snapshots del AudioMixer
-        _snapshotExit = _audioMixer.FindSnapshot("ConfirmExit");
-        _snapshotNormal = _audioMixer.FindSnapshot("Menu");
         _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
+    
+        // Creamos la instancia del snapshot para poder controlarlo
+        radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
+        normalSnapshotInstance = RuntimeManager.CreateInstance(normalSnapshot);
+        pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
+    }
+
+    public void ActivarModoRadio(bool activar)
+    {
+        if (activar)
+            radioSnapshotInstance.start(); // Inicia el snapshot de radio
+        else
+            radioSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT); // Detiene el snapshot de radio con fade out
     }
 
     // Esta función activa la confirmación y bloquea el fondo
@@ -38,7 +56,8 @@ public class MenusController : MonoBehaviour
         _mainMenuCanvas.blocksRaycasts = false;
 
         // Enchufar la snapshot de pausa
-        _snapshotExit.TransitionTo(0.4f); // Transición rápida para sentir el cambio inmediato
+        pauseSnapshotInstance.start();
+
     }
 
     // Esta función cierra la confirmación y desbloquea el fondo
@@ -54,8 +73,7 @@ public class MenusController : MonoBehaviour
         _mainMenuCanvas.blocksRaycasts = true;
 
         // Volver a la snapshot normal
-        _snapshotNormal.TransitionTo(0.4f); // Transición rápida para volver
-
+        normalSnapshotInstance.start();
 
     }
 

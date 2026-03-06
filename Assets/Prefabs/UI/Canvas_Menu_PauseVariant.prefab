@@ -21,16 +21,56 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8740e807aea82b741ae78251e1096afc, type: 3}
     - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CerrarMenuPausa
       objectReference: {fileID: 0}
     - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: CerrarMenuPausa
       objectReference: {fileID: 0}
     - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenusController_Gameplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: MenusController_Gameplay, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Lvl_01_Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096090948056609516, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096090948056609516, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2410299877430836424, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_Pivot.x
@@ -124,6 +164,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
+    - target: {fileID: 5768778947060698849, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768778947060698849, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6477649058989101197, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.69
@@ -152,6 +200,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 7114918656546765986, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114918656546765986, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8271072857670981472, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_Alpha
       value: 1
@@ -160,14 +216,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Menu_PauseVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 9170294989640501159, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5425439043713411127, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+    - {fileID: 5047787909375050872, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3110785830004360908, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
     - {fileID: 1021662780981464504, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
     - {fileID: 4896069883249796508, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1046828590494548420, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3687664492314986140}
+    - targetCorrespondingSourceObject: {fileID: 1046828590494548420, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2546370701780909900}
     - targetCorrespondingSourceObject: {fileID: 7900469046722137170, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4432591185119911753}
@@ -242,3 +309,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &8694575082755226517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046828590494548420, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+  m_PrefabInstance: {fileID: 8515815372147980881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3687664492314986140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694575082755226517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1381979763
+      Data2: 1255214556
+      Data3: 904408735
+      Data4: 793072260
+    Path: event:/UI/UI_Hover
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2546370701780909900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694575082755226517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 233479094
+      Data2: 1131654736
+      Data3: -702400893
+      Data4: 2114063968
+    Path: event:/UI/UI_Press
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
