@@ -17,7 +17,7 @@ public class ResolucionController : MonoBehaviour
                 resoluciones[i].height == Screen.currentResolution.height) {
                 indiceActual = i;
             }
-            Debug.Log("Resolución añadida: " + resoluciones[i].width + " x " + resoluciones[i].height);
+            // Debug.Log("Resolsución añadida: " + resoluciones[i].width + " x " + resoluciones[i].height);
         }
         ActualizarInterfaz();
     }
