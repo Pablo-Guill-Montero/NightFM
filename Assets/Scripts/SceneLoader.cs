@@ -3,6 +3,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Necesario para el Slider
 using System.Collections;
 
+// Este script se encarga de cargar escenas con una transición suave y una barra de progreso
+// Ejemplo de uso: SceneLoader.Instance.LoadScene("NombreDeLaEscena");
+
 public class SceneLoader : MonoBehaviour
 {
     public static SceneLoader Instance;

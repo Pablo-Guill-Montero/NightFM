@@ -51,6 +51,11 @@ public class PlayerController : MonoBehaviour
             _columnaActual++;
             UpdateCurrentPoint();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
+        }
     }
 
     void UpdateCurrentPoint()
