@@ -8,10 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394277683493157171, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8740e807aea82b741ae78251e1096afc, type: 3}
     - target: {fileID: 918902023433247839, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
@@ -104,10 +112,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2857417965819112917, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 3623952537998612785, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenusController_Gameplay, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5506087438486211983, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 6477649058989101197, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.69
@@ -135,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 6544846177826092724, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8271072857670981472, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8303189015483383508, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_Name

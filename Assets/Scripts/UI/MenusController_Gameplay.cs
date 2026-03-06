@@ -5,10 +5,13 @@ using UnityEngine.Audio;
 public class MenusController_Gameplay : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField] private GameObject _confirmExitCanvas; // GameObject para poder activarlo y desactivarlo
-    [SerializeField] private GameObject _pauseCanvas; // CanvasGroup para controlar la interacción del fondo
+    [SerializeField] private GameObject _confirmExitCanvas; 
+    [SerializeField] private GameObject _pauseCanvas; 
+    [SerializeField] private GameObject _finPartidaCanvas; 
     private CanvasGroup _pauseCanvasGroup;
-    private CanvasGroup _ConfirmExitCanvasGroup; // CanvasGroup del cuadro de confirmación para controlar su interacción
+    private CanvasGroup _ConfirmExitCanvasGroup; 
+    private CanvasGroup _FinPartidaCanvasGroup;
+    private FinPartidaCanvasController _finPartidaController;
 
     [SerializeField] private AudioMixer _audioMixer; // Referencia al AudioMixer para controlar el volumen
     private AudioMixerSnapshot _snapshotPausa; // Snapshot para aplicar al abrir el menú de confirmación
@@ -20,12 +23,29 @@ public class MenusController_Gameplay : MonoBehaviour
         // Aseguramos que el cuadro de confirmación esté oculto al iniciar
         _confirmExitCanvas.SetActive(false);
         _pauseCanvas.SetActive(false);
+        _finPartidaCanvas.SetActive(false);
+        _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
+        _pauseCanvasGroup = _pauseCanvas.GetComponent<CanvasGroup>();
+        _FinPartidaCanvasGroup = _finPartidaCanvas.GetComponent<CanvasGroup>();
+
+        _finPartidaController = _finPartidaCanvas.GetComponent<FinPartidaCanvasController>();
+
         // Obtenemos los snapshots del AudioMixer
         _snapshotPausa = _audioMixer.FindSnapshot("Pausa");
         _snapshotGameplay = _audioMixer.FindSnapshot("Gameplay");
         _snapshotMenu = _audioMixer.FindSnapshot("Menu");
-        _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
-        _pauseCanvasGroup = _pauseCanvas.GetComponent<CanvasGroup>();
+
+    }
+
+    public void AbrirFin()
+    {
+        _finPartidaCanvas.gameObject.SetActive(true);
+        _FinPartidaCanvasGroup.alpha = 1f;
+        _FinPartidaCanvasGroup.interactable = true;
+        _FinPartidaCanvasGroup.blocksRaycasts = true;
+        _snapshotPausa.TransitionTo(0.4f);
+        // Mostramos el canvas de fin de partida y pausamos el juego
+        _finPartidaController.MostrarFinPartida();
     }
 
     public void AbrirMenuPausa()

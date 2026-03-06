@@ -953,6 +953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 394277683493157171, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 881829783479226154, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1101,6 +1105,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2857417965819112917, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 2997139112782905002, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1113,6 +1121,10 @@ PrefabInstance:
       propertyPath: _audioSource
       value: 
       objectReference: {fileID: 322579919}
+    - target: {fileID: 5506087438486211983, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5163949037752096194, guid: 7b1c27a139daaca4fb0830453e37a9e6, type: 2}
     - target: {fileID: 5768778947060698849, guid: cc0c4fd16f8e7f24fa9f4d2560d6c4f0, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

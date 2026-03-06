@@ -52,9 +52,14 @@ public class PlayerController : MonoBehaviour
             UpdateCurrentPoint();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.V))
+        {
+            Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirFin();
         }
     }
 
