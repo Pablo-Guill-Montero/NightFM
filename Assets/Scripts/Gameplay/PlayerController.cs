@@ -31,22 +31,23 @@ public class PlayerController : MonoBehaviour
 
     void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) && _filaActual > 0 && _filaActual < 2)
+        // Movimiento del jugador basado en las teclas W, A, S, D o las flechas del teclado
+        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _filaActual > 0)
         {
             _filaActual--;
             UpdateCurrentPoint();
         }
-        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow) && _filaActual < 2 && _filaActual >= 0)
+        else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _filaActual < 2 )
         {
             _filaActual++;
             UpdateCurrentPoint();
         }
-        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) && _columnaActual > 0 && _columnaActual < 2)
+        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _columnaActual > 0 )
         {
             _columnaActual--;
             UpdateCurrentPoint();
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow) && _columnaActual < 2 && _columnaActual >= 0)
+        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _columnaActual < 2 )
         {
             _columnaActual++;
             UpdateCurrentPoint();

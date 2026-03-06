@@ -2539,6 +2539,172 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &786441138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 786441140}
+  - component: {fileID: 786441139}
+  m_Layer: 0
+  m_Name: TableroController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &786441139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786441138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0378a4de8413548a89db9de071dad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  padreCasillas: {fileID: 65307283}
+  padreLuces: {fileID: 165651761}
+  padreBordes: {fileID: 1380020310}
+  spritesCasillas:
+  - nombreCasilla: 0x0
+    variantes:
+    - {fileID: -7701956993826667416, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 4113548638807931296, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: -7608008875653118924, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: -6870081220192954759, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: 466228723225586656, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 0x1
+    variantes:
+    - {fileID: -6646524121198916407, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: -1729661905327115568, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: -3884332599987714999, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 2327573987822281889, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -7461745513282897721, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 0x2
+    variantes:
+    - {fileID: -4916429566645747887, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 6489707410906986288, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: -2792495544054967017, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 9023951917103082736, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -7552021306434249067, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 1x0
+    variantes:
+    - {fileID: 4260603815212155397, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: -6266944234155450304, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: 49674360850742354, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 8939561400689408684, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: 1764549782642762937, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 1x1
+    variantes:
+    - {fileID: 940784247377339493, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 5481617308150312243, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: 1291513794902966991, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: -3233533456288363904, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: 222535570797622689, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 1x2
+    variantes:
+    - {fileID: -2447064192325602205, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 1140360527000429423, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: -2013806693297674463, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 7143022297640945721, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -3297003903162764619, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 2x0
+    variantes:
+    - {fileID: -7103788778327306318, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 8550569211827370333, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: 5768965088003027386, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 4799120157061941676, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -3012127022290286976, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 2x1
+    variantes:
+    - {fileID: 4486736276241343657, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 4603459430161251565, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: 348658953180282595, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: -7924721524266054428, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -2685042690101243115, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  - nombreCasilla: 2x2
+    variantes:
+    - {fileID: -8877111870103317287, guid: 48737fcacebcd3646b3e4d9bae3a7ba4, type: 3}
+    - {fileID: 4066200451003285460, guid: 4b3ba99687fb3084e9eed75ed059d660, type: 3}
+    - {fileID: -5091695430622709535, guid: e4b5eff182d9e9349a3609349a978b89, type: 3}
+    - {fileID: 8931302867463435484, guid: d3ec4fb6a166ec24a9ef732a97ef9af0, type: 3}
+    - {fileID: -1908351670988817001, guid: 5a46dcade62363145ad9e83a153d860f, type: 3}
+  spritesBordes:
+  - nombreCasilla: 0x0
+    variantes:
+    - {fileID: -4627924995271853770, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 8191319922803111861, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: -6965321583816427621, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: 7643705171732811526, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 0x1
+    variantes:
+    - {fileID: 4997768095704950683, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 4722417097514744659, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: -6727756733608640546, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: -7173750848834622053, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 0x2
+    variantes:
+    - {fileID: 157100046310802915, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: -7334525787339362192, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: -8217583712332985094, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: -7516668896048636925, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 1x0
+    variantes:
+    - {fileID: -1907783240114820042, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 5889191946485365369, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: 2413248504462401267, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: 1804205492220171851, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 1x1
+    variantes:
+    - {fileID: 7641327753203839113, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 727041316187594296, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: 1892781125168081785, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: 9012907377750800098, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 1x2
+    variantes:
+    - {fileID: 3860399067392156425, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 6134236102764214750, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: -2754535639962547979, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: 2354588396805916508, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 2x0
+    variantes:
+    - {fileID: -7494420512424319514, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 982003456920743739, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: 1699289248226931732, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: 4856570920444219824, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 2x1
+    variantes:
+    - {fileID: 4952156609237747973, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: 4317546548497455258, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: 8032453080584566308, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: -865138414984647022, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+  - nombreCasilla: 2x2
+    variantes:
+    - {fileID: 1436012369960246771, guid: deba17cf1280ae046bf4be17b6d09b04, type: 3}
+    - {fileID: -7591458673416454519, guid: d7e55397a0e0d404498ebb76cde58427, type: 3}
+    - {fileID: 9165422629734555264, guid: 350200a7f4b10cf4aaee845888381ade, type: 3}
+    - {fileID: -3527450524659952796, guid: 6454c3e91a0bd0446b10709bf2391737, type: 3}
+--- !u!4 &786441140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786441138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.69259, y: 0.66826, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &894004120
 GameObject:
   m_ObjectHideFlags: 0
@@ -5164,3 +5330,4 @@ SceneRoots:
   - {fileID: 465502046}
   - {fileID: 365577396}
   - {fileID: 80173457}
+  - {fileID: 786441140}
