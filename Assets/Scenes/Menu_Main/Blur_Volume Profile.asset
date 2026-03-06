@@ -15,18 +15,18 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: -7.83
   contrast:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 3
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    m_Value: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   hueShift:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   saturation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &-4145022420830216875
 MonoBehaviour:
@@ -52,13 +52,13 @@ MonoBehaviour:
     m_Value: 30
   gaussianMaxRadius:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 1.5
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 1.73
   aperture:
     m_OverrideState: 0
     m_Value: 5.6
