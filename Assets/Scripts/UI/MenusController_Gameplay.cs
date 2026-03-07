@@ -24,6 +24,22 @@ public class MenusController_Gameplay : MonoBehaviour
     private EventInstance normalSnapshotInstance;
     private EventInstance pauseSnapshotInstance;
 
+    public MusicPlayer musicPlayer; // Arrastra aquí tu MusicPlayer para poder pausar la música desde este script
+
+    private int _menuState = 0; // 0 = Sin menú, 1 = Menú de pausa, 2 = Confirmación de salida, 3 = Fin de partida
+
+    private void OnEnable()
+    {
+        // Empezamos a escuchar la señal
+        PlayerInput.OnInputPressed += ResponderAlPlayerInput;
+    }
+
+    private void OnDisable()
+    {
+        // Dejamos de escuchar para evitar errores de memoria
+        PlayerInput.OnInputPressed -= ResponderAlPlayerInput;
+    }
+
     void Start()
     {
         // Aseguramos que el cuadro de confirmación esté oculto al iniciar
@@ -42,6 +58,28 @@ public class MenusController_Gameplay : MonoBehaviour
         pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
     }
 
+    void ResponderAlPlayerInput(string accion)
+    {
+        switch (accion)
+        {
+            case "Escape":
+                if (_menuState == 0)
+                {
+                    AbrirMenuPausa();
+                }
+                // else 
+                // if (_menuState == 1)
+                // {
+                //     CerrarMenuPausa();
+                // }
+                else if (_menuState == 2)
+                {
+                    CerrarConfirmacion();
+                }
+                break;
+        }
+    }
+
     public void AbrirFin()
     {
         _finPartidaCanvas.gameObject.SetActive(true);
@@ -52,7 +90,10 @@ public class MenusController_Gameplay : MonoBehaviour
         _finPartidaController.MostrarFinPartida();
 
         pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el canvas de fin de partida
+
     }
+
+
 
     public void AbrirMenuPausa()
     {
@@ -64,6 +105,10 @@ public class MenusController_Gameplay : MonoBehaviour
         Time.timeScale = 0f; // Pausa el juego
 
         pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el menú de pausa
+
+        musicPlayer.pauseMusic(); // Pausamos la música al abrir el menú de pausa
+
+        _menuState = 1;
     }
 
     public void CerrarMenuPausa()
@@ -77,6 +122,10 @@ public class MenusController_Gameplay : MonoBehaviour
         Time.timeScale = 1f; // Reanuda el juego
 
         normalSnapshotInstance.start(); // Vuelve al snapshot normal al cerrar el menú de pausa
+
+        musicPlayer.unPauseMusic(); // Reanudamos la música al cerrar el menú de pausa  
+
+        _menuState = 0;
     }
 
     // Esta función activa la confirmación y bloquea el fondo
@@ -92,6 +141,8 @@ public class MenusController_Gameplay : MonoBehaviour
         _pauseCanvasGroup.interactable = false;
         // 'blocksRaycasts' falso hace que el ratón "atraviese" el fondo si fuera necesario
         _pauseCanvasGroup.blocksRaycasts = false;
+
+        _menuState = 2;
     }
 
     // Esta función cierra la confirmación y desbloquea el fondo
@@ -105,6 +156,8 @@ public class MenusController_Gameplay : MonoBehaviour
         // 2. Devolvemos la interacción al fondo
         _pauseCanvasGroup.interactable = true;
         _pauseCanvasGroup.blocksRaycasts = true;
+
+        _menuState = 1;
     }
 
     public void SalirAlMenuPrincipal()
@@ -113,6 +166,7 @@ public class MenusController_Gameplay : MonoBehaviour
         Time.timeScale = 1f;
         radioSnapshotInstance.start();
         SceneLoader.Instance.LoadScene("Menu_Main");
+        _menuState = 0;
     }
 
 }

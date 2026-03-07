@@ -10,6 +10,60 @@ public class PlayerController : MonoBehaviour
     private int _filaActual = 1;
     private int _columnaActual = 1;
 
+    private void OnEnable()
+    {
+        // Empezamos a escuchar la señal
+        PlayerInput.OnInputPressed += ResponderAlPlayerInput;
+    }
+
+    private void OnDisable()
+    {
+        // Dejamos de escuchar para evitar errores de memoria
+        PlayerInput.OnInputPressed -= ResponderAlPlayerInput;
+    }
+
+    // Recoge la señal de PlayerInput y responde a ella según la acción recibida
+    void ResponderAlPlayerInput(string accion)
+    {
+        switch (accion)
+        {
+            case "Up":
+                if (_filaActual > 0)
+                {
+                    _filaActual--;
+                    UpdateCurrentPoint();
+                }
+                break;
+            case "Down":
+                if (_filaActual < 2)
+                {
+                    _filaActual++;
+                    UpdateCurrentPoint();
+                }
+                break;
+            case "Left":
+                if (_columnaActual > 0)
+                {
+                    _columnaActual--;
+                    UpdateCurrentPoint();
+                }
+                break;
+            case "Right":
+                if (_columnaActual < 2)
+                {
+                    _columnaActual++;
+                    UpdateCurrentPoint();
+                }
+                break;
+            case "Escape":
+                Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
+                break;
+            case "Fin":
+                Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirFin();
+                break;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,42 +80,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckInput();
-    }
-
-    void CheckInput()
-    {
-        // Movimiento del jugador basado en las teclas W, A, S, D o las flechas del teclado
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && _filaActual > 0)
-        {
-            _filaActual--;
-            UpdateCurrentPoint();
-        }
-        else if ((Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) && _filaActual < 2 )
-        {
-            _filaActual++;
-            UpdateCurrentPoint();
-        }
-        else if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) && _columnaActual > 0 )
-        {
-            _columnaActual--;
-            UpdateCurrentPoint();
-        }
-        else if ((Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) && _columnaActual < 2 )
-        {
-            _columnaActual++;
-            UpdateCurrentPoint();
-        }
-
-        else if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
-        }
-
-        else if (Input.GetKeyDown(KeyCode.V))
-        {
-            Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirFin();
-        }
+        // No necesitamos revisar el input aquí, ya que lo manejamos a través del evento
     }
 
     void UpdateCurrentPoint()

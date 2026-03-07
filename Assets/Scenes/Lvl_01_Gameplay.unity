@@ -2331,6 +2331,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
+      propertyPath: musicPlayer
+      value: 
+      objectReference: {fileID: 995700316}
+    - target: {fileID: 4139025833744829677, guid: 289f5fa52e6b6b647b8b3b932613364a, type: 3}
       propertyPath: _pauseCanvas
       value: 
       objectReference: {fileID: 276598652}
@@ -2987,6 +2991,65 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &995700314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995700315}
+  - component: {fileID: 995700316}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995700315
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995700314}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995156341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995700316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995700314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3837f2d1c994a84caa11c4ed8dba948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicPlayer
+  musicStore: {fileID: 11400000, guid: 5708cbe454620fb449927923b26d3191, type: 2}
+  musicEvent:
+    Guid:
+      Data1: -2075849317
+      Data2: 1106651596
+      Data3: 1926142390
+      Data4: -1706923971
+    Path: event:/Music/Music_Infinity
+  gameplaySnapshot:
+    Guid:
+      Data1: 971220584
+      Data2: 1157241166
+      Data3: -917380705
+      Data4: -1214283251
+    Path: snapshot:/Gameplay
 --- !u!1 &1011902592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,9 +3689,9 @@ Transform:
   - {fileID: 529486125}
   - {fileID: 1856747057}
   - {fileID: 476171026}
-  - {fileID: 974053819}
-  - {fileID: 631934967}
   - {fileID: 240094972}
+  - {fileID: 631934967}
+  - {fileID: 974053819}
   - {fileID: 1248691359}
   - {fileID: 263323961}
   - {fileID: 1539182107}
@@ -4255,6 +4318,50 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1716878163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1716878164}
+  - component: {fileID: 1716878165}
+  m_Layer: 0
+  m_Name: PlayerInput
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1716878164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716878163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995156341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1716878165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716878163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065a272543abe8d4fb571dcc38d7b57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
 --- !u!1 &1726149161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4371,6 +4478,460 @@ Transform:
   - {fileID: 1503261977}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1762520352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1762520353}
+  - component: {fileID: 1762520354}
+  m_Layer: 0
+  m_Name: Composer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1762520353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762520352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995156341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762520354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762520352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127696148017eb644a8ce3b7a70b0622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Composer
+  score:
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
+  - layout: 000000000
 --- !u!1 &1772925750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +5321,55 @@ Transform:
   - {fileID: 1277458207}
   m_Father: {fileID: 1726149164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1885077570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885077571}
+  - component: {fileID: 1885077572}
+  m_Layer: 0
+  m_Name: Metronom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1885077571
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885077570}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1995156341}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1885077572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885077570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7bb155a550ed243b6063d683851d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Metronom
+  musicStore: {fileID: 11400000, guid: 5708cbe454620fb449927923b26d3191, type: 2}
+  BPM: 128
+  _numerador: 4
+  _denominador: 4
+  margin: 100
 --- !u!1 &1936781969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,6 +5646,41 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963107268}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1995156340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1995156341}
+  m_Layer: 0
+  m_Name: RythmCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1995156341
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995156340}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1716878164}
+  - {fileID: 995700315}
+  - {fileID: 1885077571}
+  - {fileID: 1762520353}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008290804
 GameObject:
@@ -5403,3 +6048,4 @@ SceneRoots:
   - {fileID: 365577396}
   - {fileID: 80173457}
   - {fileID: 786441140}
+  - {fileID: 1995156341}
