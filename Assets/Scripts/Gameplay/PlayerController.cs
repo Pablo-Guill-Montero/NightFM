@@ -1,9 +1,16 @@
 using UnityEngine;
 using System; // Necesario para Action
+using TMPro; // Necesario para TextMeshPro
 
 public class PlayerController : MonoBehaviour
 {
-
+    [Header("UI Feedback")]
+    [SerializeField] private TextMeshPro _addPuntuacionTexto; // Arrastra el objeto "Puntuacion_Positiva"
+    private Animation _addPuntuacionAnim; // Para el componente Animation Legacy
+    [SerializeField] private TextMeshPro _subPuntuacionTexto; // Arrastra el objeto "Puntuacion_Positiva"
+    private Animation _subPuntuacionAnim; // Para el componente Animation Legacy
+    
+    [Header("Celdas")]
     [SerializeField] private Transform[] movementPoints;
     private Transform _currentPoint;
     private int _currentPointIndex = 4; // Empezamos en el punto central (índice 4)
@@ -48,11 +55,17 @@ public class PlayerController : MonoBehaviour
     {
         particulasFallo.Play();
         _animator.SetInteger("dance", 0);
+        _subPuntuacionTexto.text = $"-{newScore}";
+        _subPuntuacionAnim.Rewind();
+        _subPuntuacionAnim.Play();
     }
 
     private void HandleAddScore(int newScore)
     {
         particulasAcierto.Play();
+        _addPuntuacionTexto.text = $"+{newScore}";
+        _addPuntuacionAnim.Rewind();
+        _addPuntuacionAnim.Play();
     }
 
     // Recoge la señal de PlayerInput y responde a ella según la acción recibida
@@ -111,6 +124,15 @@ public class PlayerController : MonoBehaviour
         _currentPoint = movementPoints[_currentPointIndex];
         transform.position = _currentPoint.position; // Posicionamos al jugador en el punto inicial
         _animator = GetComponent<Animator>();
+        // Obtenemos el componente Animation del objeto de texto
+        if (_addPuntuacionTexto != null)
+        {
+            _addPuntuacionAnim = _addPuntuacionTexto.GetComponent<Animation>();
+        }
+        if (_subPuntuacionTexto != null)
+        {
+            _subPuntuacionAnim = _subPuntuacionTexto.GetComponent<Animation>();
+        }
     }
 
     // Update is called once per frame

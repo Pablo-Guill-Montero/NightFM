@@ -63,7 +63,7 @@ public class Referee : MonoBehaviour
     [Header("Ajustes de reglas")]
     private int _totalScore = 0;
     [SerializeField] private int _addScore = 1;
-    [SerializeField] private int _subScore = 3;
+    [SerializeField] private int _subScore = 2;
     [Header("Ajustes de combo. Multiplicador de Add Score")]
     [SerializeField] private int _combo = 1;
     [SerializeField] private int _maxCombo = 4;
