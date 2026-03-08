@@ -8,7 +8,10 @@ public class MenusController : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private GameObject _confirmExitCanvas; // GameObject para poder activarlo y desactivarlo
     [SerializeField] private CanvasGroup _mainMenuCanvas; // CanvasGroup para controlar la interacción del fondo
+    [SerializeField] private GameObject _idiomasCanvas; 
+
     private CanvasGroup _ConfirmExitCanvasGroup; // CanvasGroup del cuadro de confirmación para controlar su interacción
+    private CanvasGroup _IdiomasCanvasGroup; 
 
     // Arrastra el Snapshot desde la ventana de FMOD Event Browser al Inspector
     public EventReference radioSnapshot; 
@@ -24,6 +27,8 @@ public class MenusController : MonoBehaviour
         // Aseguramos que el cuadro de confirmación esté oculto al iniciar
         _confirmExitCanvas.SetActive(false);
         _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
+        _idiomasCanvas.SetActive(false);
+        _IdiomasCanvasGroup = _idiomasCanvas.GetComponent<CanvasGroup>();
     
         // Creamos la instancia del snapshot para poder controlarlo
         radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
@@ -79,6 +84,33 @@ public class MenusController : MonoBehaviour
         // Volver a la snapshot normal
         pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
+    }
+
+    public void AbrirIdiomas()
+    {
+        // 1. Mostramos el cuadro de idiomas
+        _idiomasCanvas.SetActive(true);
+        _IdiomasCanvasGroup.alpha = 1f;
+        _IdiomasCanvasGroup.interactable = true; 
+        // 2. Bloqueamos la interacción del fondo
+        _mainMenuCanvas.interactable = false;
+        _mainMenuCanvas.blocksRaycasts = false;
+
+        pauseSnapshotInstance.start(); 
+    }
+
+    public void CerrarIdiomas()
+    {
+        // 1. Ocultamos el cuadro de idiomas
+        _idiomasCanvas.SetActive(false);
+        _IdiomasCanvasGroup.alpha = 0f;
+        _IdiomasCanvasGroup.interactable = false; 
+
+        // 2. Devolvemos la interacción al fondo
+        _mainMenuCanvas.interactable = true;
+        _mainMenuCanvas.blocksRaycasts = true;
+
+        pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void SalirDelJuego()

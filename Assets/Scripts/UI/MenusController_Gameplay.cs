@@ -11,9 +11,16 @@ public class MenusController_Gameplay : MonoBehaviour
     [SerializeField] private GameObject _confirmExitCanvas; 
     [SerializeField] private GameObject _pauseCanvas; 
     [SerializeField] private GameObject _finPartidaCanvas; 
+    [SerializeField] private GameObject _idiomasCanvas; 
+
+    [SerializeField] private GameObject _reiniciarCanvas; 
+
     private CanvasGroup _pauseCanvasGroup;
     private CanvasGroup _ConfirmExitCanvasGroup; 
     private CanvasGroup _FinPartidaCanvasGroup;
+    private CanvasGroup _IdiomasCanvasGroup; 
+    private CanvasGroup _ReiniciarCanvasGroup; 
+    
     private FinPartidaCanvasController _finPartidaController;
 
 
@@ -57,9 +64,14 @@ public class MenusController_Gameplay : MonoBehaviour
         _confirmExitCanvas.SetActive(false);
         _pauseCanvas.SetActive(false);
         _finPartidaCanvas.SetActive(false);
+        _idiomasCanvas.SetActive(false);
+        _reiniciarCanvas.SetActive(false);
+
         _ConfirmExitCanvasGroup = _confirmExitCanvas.GetComponent<CanvasGroup>();
         _pauseCanvasGroup = _pauseCanvas.GetComponent<CanvasGroup>();
         _FinPartidaCanvasGroup = _finPartidaCanvas.GetComponent<CanvasGroup>();
+        _IdiomasCanvasGroup = _idiomasCanvas.GetComponent<CanvasGroup>();
+        _ReiniciarCanvasGroup = _reiniciarCanvas.GetComponent<CanvasGroup>();
 
         _finPartidaController = _finPartidaCanvas.GetComponent<FinPartidaCanvasController>();
 
@@ -123,8 +135,7 @@ public class MenusController_Gameplay : MonoBehaviour
     {
         _pauseCanvas.gameObject.SetActive(true);
         _pauseCanvasGroup.alpha = 1f;
-        _pauseCanvasGroup.interactable = true;
-        _pauseCanvasGroup.blocksRaycasts = true;
+        DevolverInteraccionFondo(); // Aseguramos que el fondo sea interactuable para el menú de pausa
         // Aquí podrías agregar lógica adicional para pausar el juego, como detener el tiempo
         Time.timeScale = 0f; // Pausa el juego
         
@@ -140,8 +151,7 @@ public class MenusController_Gameplay : MonoBehaviour
     {
         _pauseCanvas.gameObject.SetActive(false);
         _pauseCanvasGroup.alpha = 0f;
-        _pauseCanvasGroup.interactable = false;
-        _pauseCanvasGroup.blocksRaycasts = false;
+        QuitarInteraccionFondo(); // Aseguramos que el fondo no sea interactuable mientras el menú está cerrado
 
         // Aquí podrías agregar lógica adicional para reanudar el juego, como reanudar el tiempo
         Time.timeScale = 1f; // Reanuda el juego
@@ -163,10 +173,7 @@ public class MenusController_Gameplay : MonoBehaviour
         _ConfirmExitCanvasGroup.interactable = true; // Permitimos la interacción con el cuadro
 
         // 2. Bloqueamos la interacción del fondo
-        // 'interactable' falso evita clicks en botones
-        _pauseCanvasGroup.interactable = false;
-        // 'blocksRaycasts' falso hace que el ratón "atraviese" el fondo si fuera necesario
-        _pauseCanvasGroup.blocksRaycasts = false;
+        QuitarInteraccionFondo();
 
         _menuState = 2;
     }
@@ -180,10 +187,58 @@ public class MenusController_Gameplay : MonoBehaviour
         _ConfirmExitCanvasGroup.interactable = false; // Desactivamos la interacción con el
 
         // 2. Devolvemos la interacción al fondo
-        _pauseCanvasGroup.interactable = true;
-        _pauseCanvasGroup.blocksRaycasts = true;
+        DevolverInteraccionFondo();
 
         _menuState = 1;
+    }
+
+    public void AbrirIdiomas()
+    {
+        // 1. Mostramos el cuadro de idiomas
+        _idiomasCanvas.SetActive(true);
+        _IdiomasCanvasGroup.alpha = 1f;
+        _IdiomasCanvasGroup.interactable = true; 
+        // 2. Bloqueamos la interacción del fondo
+        QuitarInteraccionFondo();
+
+        // pauseSnapshotInstance.start(); 
+    }
+
+    public void CerrarIdiomas()
+    {
+        // 1. Ocultamos el cuadro de idiomas
+        _idiomasCanvas.SetActive(false);
+        _IdiomasCanvasGroup.alpha = 0f;
+        _IdiomasCanvasGroup.interactable = false; 
+
+        // 2. Devolvemos la interacción al fondo
+        DevolverInteraccionFondo();
+        // pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void AbrirReiniciar()
+    {
+        // 1. Mostramos el cuadro de idiomas
+        _reiniciarCanvas.SetActive(true);
+        _ReiniciarCanvasGroup.alpha = 1f;
+        _ReiniciarCanvasGroup.interactable = true; 
+
+        // 2. Bloqueamos la interacción del fondo
+        QuitarInteraccionFondo();
+        // pauseSnapshotInstance.start(); 
+    }
+
+    public void CerrarReiniciar()
+    {
+        // 1. Ocultamos el cuadro de idiomas
+        _reiniciarCanvas.SetActive(false);
+        _ReiniciarCanvasGroup.alpha = 0f;
+        _ReiniciarCanvasGroup.interactable = false; 
+
+        // 2. Devolvemos la interacción al fondo
+        DevolverInteraccionFondo();
+
+        // pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public void SalirAlMenuPrincipal()
@@ -194,6 +249,75 @@ public class MenusController_Gameplay : MonoBehaviour
         // radioSnapshotInstance.start();
         SceneLoader.Instance.LoadScene("Menu_Main");
         _menuState = 0;
+    }
+
+    private void QuitarInteraccionFondo()
+    {
+        _pauseCanvasGroup.interactable = false;
+        _pauseCanvasGroup.blocksRaycasts = false;
+    }
+
+    private void DevolverInteraccionFondo()
+    {
+        _pauseCanvasGroup.interactable = true;
+        _pauseCanvasGroup.blocksRaycasts = true;
+    }
+
+    public void ReiniciarNivel()
+    {
+        Debug.Log("Reiniciando nivel...");
+        Time.timeScale = 1f;
+        DesactivarTodosCanvas();
+        SceneLoader.Instance.LoadScene("Lvl_01_Gameplay");
+    }
+
+    private void DesactivarTodosCanvas()
+    {
+        DesactivarPauseCanvas();
+        DesactivarConfirmExitCanvas();
+        DesactivarIdiomaCanvas();
+        DesactivarReiniciarCanvas();
+        DesactivarFinPartidaCanvas();
+    }
+
+    private void DesactivarPauseCanvas()
+    {
+        _pauseCanvasGroup.alpha = 0f; // Hace el canvas invisible
+        _pauseCanvasGroup.interactable = false; // Desactiva la interacción
+        _pauseCanvasGroup.blocksRaycasts = false; // Desactiva el bloqueo de raycasts
+        _pauseCanvas.gameObject.SetActive(false); // Desactiva el GameObject del canvas
+    }
+
+    private void DesactivarConfirmExitCanvas()
+    {
+        _ConfirmExitCanvasGroup.alpha = 0f;
+        _ConfirmExitCanvasGroup.interactable = false;
+        _ConfirmExitCanvasGroup.blocksRaycasts = false;
+        _confirmExitCanvas.SetActive(false);
+    }
+
+    private void DesactivarIdiomaCanvas()
+    {
+        _IdiomasCanvasGroup.alpha = 0f;
+        _IdiomasCanvasGroup.interactable = false;
+        _IdiomasCanvasGroup.blocksRaycasts = false;
+        _idiomasCanvas.SetActive(false);
+    }
+
+    private void DesactivarReiniciarCanvas()
+    {
+        _ReiniciarCanvasGroup.alpha = 0f;
+        _ReiniciarCanvasGroup.interactable = false;
+        _ReiniciarCanvasGroup.blocksRaycasts = false;
+        _reiniciarCanvas.SetActive(false);
+    }
+
+    private void DesactivarFinPartidaCanvas()
+    {
+        _FinPartidaCanvasGroup.alpha = 0f;
+        _FinPartidaCanvasGroup.interactable = false;
+        _FinPartidaCanvasGroup.blocksRaycasts = false;
+        _finPartidaCanvas.SetActive(false);
     }
 
 }

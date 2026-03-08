@@ -54,6 +54,8 @@ public class Referee : MonoBehaviour
     public static event Action<int> AddScoreEvent;
     public static event Action<int> SubtractScoreEvent;
     public static event Action<int> UpdateComboEvent;
+    public static event Action<int> UpdateComboSliderMAxEvent;
+
     public static event Action<int> UpdateScoreEvent;
     public static event Action<int> StarAchievedEvent;
 
@@ -61,7 +63,7 @@ public class Referee : MonoBehaviour
     [Header("Ajustes de reglas")]
     private int _totalScore = 0;
     [SerializeField] private int _addScore = 1;
-    [SerializeField] private int _subScore = 5;
+    [SerializeField] private int _subScore = 3;
     [Header("Ajustes de combo. Multiplicador de Add Score")]
     [SerializeField] private int _combo = 1;
     [SerializeField] private int _maxCombo = 4;
@@ -172,6 +174,7 @@ public class Referee : MonoBehaviour
         if (_totalScore < 0) _totalScore = 0; // Evitamos que la puntuación sea negativa
         SubtractScoreEvent?.Invoke(_subScore);
         UpdateScoreEvent?.Invoke(_totalScore);
+        UpdateComboSliderMAxEvent?.Invoke(_rachaFor2); 
     }
 
     private void HandleRachaAumentada(int rachaActual)
@@ -182,16 +185,19 @@ public class Referee : MonoBehaviour
         {
             _combo = 1;
             UpdateComboEvent?.Invoke(_combo);
+            UpdateComboSliderMAxEvent?.Invoke(_rachaFor2); 
         }
         else if (rachaActual < _rachaFor3)
         {
             _combo = 2;
             UpdateComboEvent?.Invoke(_combo);
+            UpdateComboSliderMAxEvent?.Invoke(_rachaFor3); 
         }
         else if (rachaActual < _rachaFor4)
         {
             _combo = 3;
             UpdateComboEvent?.Invoke(_combo);
+            UpdateComboSliderMAxEvent?.Invoke(_rachaFor4); 
         }
         else
         {

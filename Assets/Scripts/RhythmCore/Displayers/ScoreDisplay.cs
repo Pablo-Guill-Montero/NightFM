@@ -7,6 +7,7 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField] private MusicDataStore musicStore;
     [SerializeField] private TextMeshPro scoreText;
     [SerializeField] private TextMeshPro comboText;
+    [SerializeField] private Slider comboSlider;
 
     [SerializeField] private Canvas canvasEstrellas;
     [SerializeField] private Image[] _estrellasUI; // Array de imágenes para mostrar las estrellas
@@ -21,6 +22,9 @@ public class ScoreDisplay : MonoBehaviour
         Referee.UpdateComboEvent += UpdateCombo;
         Referee.StarAchievedEvent += UpdateStars;
         Referee.MaxScoreSettedEvent += InitScore; // Nos suscribimos al evento de max score para inicializar el slider en cuanto el referee lo calcule al inicio de la partida
+        Referee.UpdateComboSliderMAxEvent += (maxCombo) => comboSlider.maxValue = maxCombo; // Nos suscribimos al evento para actualizar el máximo del slider de combo cada vez que el referee lo actualice
+        Judge.OnRachaAumentada += (rachaActual) => comboSlider.value = rachaActual; // Nos suscribimos al evento de racha aumentada para actualizar el valor del slider de combo cada vez que el jugador aumente su racha
+        Judge.OnFallo += (fallos) => comboSlider.value = 0; // Reseteamos el slider de combo a 0 cada vez que el jugador falle
     }
 
     private void OnDisable()
@@ -29,6 +33,9 @@ public class ScoreDisplay : MonoBehaviour
         Referee.UpdateComboEvent -= UpdateCombo;
         Referee.StarAchievedEvent -= UpdateStars;
         Referee.MaxScoreSettedEvent -= InitScore; // Nos desuscribimos del evento de max score al desactivar el script
+        Referee.UpdateComboSliderMAxEvent -= (maxCombo) => comboSlider.maxValue = maxCombo; // Nos desuscribimos del evento para actualizar el máximo del slider de combo al desactivar el script
+        Judge.OnRachaAumentada -= (rachaActual) => comboSlider.value = rachaActual; // Nos desuscribimos del evento de racha aumentada al desactivar el script
+        Judge.OnFallo -= (fallos) => comboSlider.value = 0; // Nos desuscribimos del evento de fallo al desactivar el script
     }
 
     private void InitScore(int maxScore)
@@ -39,6 +46,8 @@ public class ScoreDisplay : MonoBehaviour
         // Delimitamos el rango máximo del slider
         scoreSlider.minValue = 0;
         scoreSlider.maxValue = maxScore; // El máximo score posible, que el referee puede calcular al inicio de la partida sumando el valor de cada beat puntuable
+        comboSlider.minValue = 1;
+        comboSlider.maxValue = 4; // Ajusta este valor según el máximo combo posible
     }
 
 
