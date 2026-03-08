@@ -46,7 +46,7 @@ public class Metronom : MonoBehaviour
     // Cuando el time position de la música está dentro del margen de error, devuelve su nº en activeBeat; en otro caso -1 o null.
     // Funciona como una ventana que se abre y se cierra cuando se entra y sale en el rango de un beat con su margen de error.
     [Header("Ajustes de Ventana")]
-    [SerializeField] private int margin = 100; // Margen de error en MS (ej: 100ms antes y después)
+    [SerializeField] private int margin = 500; // Margen de error en MS (ej: 100ms antes y después)
 
     private int _activeBeat = -1; // -1 significa que estamos fuera de cualquier ventana
     private bool _isInWindow = false;
@@ -75,6 +75,8 @@ public class Metronom : MonoBehaviour
 
     void Update()
     {
+        if (musicStore.GetGameEnded()) return; // Si el juego ha terminado, no hacemos nada
+
         _currentMusicPosition = musicStore.GetTimelinePosition();
 
         // 1. Lógica de ventanas Entrada y Salida
@@ -85,6 +87,8 @@ public class Metronom : MonoBehaviour
             {
                 _isInWindow = true;
                 _activeBeat = _lastBeat + 1; // Es el beat que está por venir
+                // Escribimos el active beat en el data storage y lanzamos el evento
+                musicStore.SetActiveBeat(_activeBeat);
                 EnterBeatEvent?.Invoke(_activeBeat);
             }
         }
@@ -95,6 +99,7 @@ public class Metronom : MonoBehaviour
                 _isInWindow = false;
                 ExitBeatEvent?.Invoke(_activeBeat);
                 _activeBeat = -1; // Limpiamos el beat activo
+                musicStore.SetActiveBeat(_activeBeat);
             }
         }
 
@@ -115,9 +120,10 @@ public class Metronom : MonoBehaviour
             // Calculamos los límites del próximo beat
             _activeBeatStartPosition = _nextBeatPosition - margin;
             _activeBeatEndPosition = _nextBeatPosition + margin;
-
+            // Escribimos el último beat en el data storage para que otros sistemas puedan consultarlo si lo necesitan
+            musicStore.SetLastBeat(_lastBeat);
             // Debug
-            Debug.Log($"Beat: {_lastBeat}, Next Beat Position: {_nextBeatPosition}ms, Active Beat Window: [{_activeBeatStartPosition}ms - {_activeBeatEndPosition}ms]");
+            // Debug.Log($"Beat: {_lastBeat}, Next Beat Position: {_nextBeatPosition}ms, Active Beat Window: [{_activeBeatStartPosition}ms - {_activeBeatEndPosition}ms]");
         }
 
     }

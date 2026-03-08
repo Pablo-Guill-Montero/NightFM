@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 using FMODUnity;
 using FMOD.Studio;
+// using System; // Para usar Action
 
 public class MenusController_Gameplay : MonoBehaviour
 {
@@ -17,12 +18,12 @@ public class MenusController_Gameplay : MonoBehaviour
 
 
     // Arrastra el Snapshot desde la ventana de FMOD Event Browser al Inspector
-    public EventReference radioSnapshot; 
-    public EventReference normalSnapshot;
-    public EventReference pauseSnapshot;
-    private EventInstance radioSnapshotInstance;
-    private EventInstance normalSnapshotInstance;
-    private EventInstance pauseSnapshotInstance;
+    // public EventReference radioSnapshot; 
+    // public EventReference normalSnapshot;
+    // public EventReference pauseSnapshot;
+    // private EventInstance radioSnapshotInstance;
+    // private EventInstance normalSnapshotInstance;
+    // private EventInstance pauseSnapshotInstance;
 
     public MusicPlayer musicPlayer; // Arrastra aquí tu MusicPlayer para poder pausar la música desde este script
 
@@ -32,13 +33,23 @@ public class MenusController_Gameplay : MonoBehaviour
     {
         // Empezamos a escuchar la señal
         PlayerInput.OnInputPressed += ResponderAlPlayerInput;
+        Referee.GameEndEvent += AbrirFin; // Nos suscribimos al evento de fin de juego para abrir el canvas de fin de partida
     }
 
     private void OnDisable()
     {
         // Dejamos de escuchar para evitar errores de memoria
         PlayerInput.OnInputPressed -= ResponderAlPlayerInput;
+        Referee.GameEndEvent -= AbrirFin; // Nos desuscribimos del evento de fin de juego al desactivar el script
     }
+
+    // private void OnDestroy()
+    // {
+    //     // Liberamos la memoria de FMOD al destruir el script
+    //     radioSnapshotInstance.release();
+    //     normalSnapshotInstance.release();
+    //     pauseSnapshotInstance.release();
+    // }
 
     void Start()
     {
@@ -53,9 +64,11 @@ public class MenusController_Gameplay : MonoBehaviour
         _finPartidaController = _finPartidaCanvas.GetComponent<FinPartidaCanvasController>();
 
         // Creamos la instancia del snapshot para poder controlarlo
-        radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
-        normalSnapshotInstance = RuntimeManager.CreateInstance(normalSnapshot);
-        pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
+        // radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
+        // normalSnapshotInstance = RuntimeManager.CreateInstance(normalSnapshot);
+        // pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
+
+        // normalSnapshotInstance.start(); // Empezamos con el snapshot normal al iniciar el juego
     }
 
     void ResponderAlPlayerInput(string accion)
@@ -80,7 +93,15 @@ public class MenusController_Gameplay : MonoBehaviour
         }
     }
 
-    public void AbrirFin()
+    // // Método auxiliar para limpiar snapshots antes de poner una nueva
+    // private void LimpiarSnapshots()
+    // {
+    //     radioSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    //     normalSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    //     pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    // }
+
+    public void AbrirFin(bool playerWon)
     {
         _finPartidaCanvas.gameObject.SetActive(true);
         _FinPartidaCanvasGroup.alpha = 1f;
@@ -89,10 +110,13 @@ public class MenusController_Gameplay : MonoBehaviour
         // Mostramos el canvas de fin de partida y pausamos el juego
         _finPartidaController.MostrarFinPartida();
 
-        pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el canvas de fin de partida
+        // LimpiarSnapshots();
+        // pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el canvas de fin de partida
 
     }
 
+
+    // Menús
 
 
     public void AbrirMenuPausa()
@@ -103,8 +127,9 @@ public class MenusController_Gameplay : MonoBehaviour
         _pauseCanvasGroup.blocksRaycasts = true;
         // Aquí podrías agregar lógica adicional para pausar el juego, como detener el tiempo
         Time.timeScale = 0f; // Pausa el juego
-
-        pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el menú de pausa
+        
+        // LimpiarSnapshots();
+        // pauseSnapshotInstance.start(); // Enchufar la snapshot de pausa al abrir el menú de pausa
 
         musicPlayer.pauseMusic(); // Pausamos la música al abrir el menú de pausa
 
@@ -121,7 +146,8 @@ public class MenusController_Gameplay : MonoBehaviour
         // Aquí podrías agregar lógica adicional para reanudar el juego, como reanudar el tiempo
         Time.timeScale = 1f; // Reanuda el juego
 
-        normalSnapshotInstance.start(); // Vuelve al snapshot normal al cerrar el menú de pausa
+        // LimpiarSnapshots();
+        // normalSnapshotInstance.start(); // Vuelve al snapshot normal al cerrar el menú de pausa
 
         musicPlayer.unPauseMusic(); // Reanudamos la música al cerrar el menú de pausa  
 
@@ -164,7 +190,8 @@ public class MenusController_Gameplay : MonoBehaviour
     {
         Debug.Log("Saliendo al menú principal...");
         Time.timeScale = 1f;
-        radioSnapshotInstance.start();
+        // LimpiarSnapshots();
+        // radioSnapshotInstance.start();
         SceneLoader.Instance.LoadScene("Menu_Main");
         _menuState = 0;
     }

@@ -16,7 +16,6 @@ public class MenusController : MonoBehaviour
     public EventReference pauseSnapshot;
 
     private EventInstance radioSnapshotInstance;
-    private EventInstance normalSnapshotInstance;
     private EventInstance pauseSnapshotInstance;
 
 
@@ -28,8 +27,14 @@ public class MenusController : MonoBehaviour
     
         // Creamos la instancia del snapshot para poder controlarlo
         radioSnapshotInstance = RuntimeManager.CreateInstance(radioSnapshot);
-        normalSnapshotInstance = RuntimeManager.CreateInstance(normalSnapshot);
         pauseSnapshotInstance = RuntimeManager.CreateInstance(pauseSnapshot);
+    }
+
+    private void OnDestroy()
+    {
+        // Liberamos la memoria de FMOD al destruir el script
+        radioSnapshotInstance.release();
+        pauseSnapshotInstance.release();
     }
 
     public void ActivarModoRadio(bool activar)
@@ -72,7 +77,7 @@ public class MenusController : MonoBehaviour
         _mainMenuCanvas.blocksRaycasts = true;
 
         // Volver a la snapshot normal
-        normalSnapshotInstance.start();
+        pauseSnapshotInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
     }
 

@@ -47,6 +47,7 @@ MonoBehaviour:
     Data4: -719777700
   Banks:
   - {fileID: -1570617202140389569}
+  - {fileID: 4334934710332165389}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -74,6 +75,7 @@ MonoBehaviour:
     Data4: 1091322762
   Banks:
   - {fileID: -1570617202140389569}
+  - {fileID: 4334934710332165389}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -188,7 +190,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1531106095627207397}
   cacheVersion: 131858
-  cacheTime: 639085060715562006
+  cacheTime: 639085748018896368
   SerializableEventsDict:
   - key: event:/Music/Music_Rythm
     index: 0
@@ -254,7 +256,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639085049572787356
+  lastModified: 639085748018896368
   FileSizes:
   - Name: 
     Value: 1524
@@ -274,7 +276,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639085049572777358
+  lastModified: 639085748018876363
   FileSizes: []
   Exists: 1
 --- !u!114 &2999337431258674754
@@ -343,7 +345,7 @@ MonoBehaviour:
   Path: Assets/FMOD_Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639085060715562006
+  lastModified: 639085734588821537
   FileSizes: []
   Exists: 1
 --- !u!114 &5288110315160196049

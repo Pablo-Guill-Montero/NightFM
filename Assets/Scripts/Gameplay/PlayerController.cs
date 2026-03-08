@@ -1,4 +1,5 @@
 using UnityEngine;
+using System; // Necesario para Action
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class PlayerController : MonoBehaviour
 
     private int _filaActual = 1;
     private int _columnaActual = 1;
+
+    public static event Action<int> OnPlayerMove; // Evento para que el juez sepa cuándo se ha movido el jugador y pueda evaluar si es correcto o no
+    // public static event Action<int> OnPlayerEnterBeat; // Evento para saber la posición del player cada vez que entra un nuevo rango de beat
 
     private void OnEnable()
     {
@@ -56,10 +60,12 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case "Escape":
-                Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
+                UnityEngine.Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirMenuPausa();
                 break;
             case "Fin":
-                Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirFin();
+                // UnityEngine.Object.FindFirstObjectByType<MenusController_Gameplay>().AbrirFin();
+                MusicPlayer musicPlayer = UnityEngine.Object.FindFirstObjectByType<MusicPlayer>();
+                musicPlayer.stopMusic();
                 break;
         }
     }
@@ -88,5 +94,7 @@ public class PlayerController : MonoBehaviour
         _currentPointIndex = _filaActual * 3 + _columnaActual; // Calculamos el índice basado en la fila y columna
         _currentPoint = movementPoints[_currentPointIndex];
         transform.position = _currentPoint.position; // Movemos al jugador al nuevo punto
+        // Lanzo el evento de que el jugador se ha movido
+        OnPlayerMove?.Invoke(_currentPointIndex);
     }
 }

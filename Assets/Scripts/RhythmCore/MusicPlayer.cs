@@ -47,6 +47,8 @@ public class MusicPlayer : MonoBehaviour
 
     private void Update()
     {
+        if(musicStore.GetGameEnded()) return; // Si el juego ha terminado, no hacemos nada
+        
         // Actualizamos la posición de la música cada frame
         _musicInstance.getTimelinePosition(out int position);
         _currentMusicPosition = position;
@@ -76,5 +78,10 @@ public class MusicPlayer : MonoBehaviour
     public void unPauseMusic()
     {
         _musicInstance.setPaused(false);
+    }
+
+    public void stopMusic()
+    {
+        _musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }

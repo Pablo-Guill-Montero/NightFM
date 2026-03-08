@@ -12,6 +12,9 @@ using System.IO; // Necesario para leer archivos
 // </summary>
 public class Composer : MonoBehaviour
 {
+    [Header("Store de música")]
+    public MusicDataStore musicStore; // Arrastrar el archivo del MusicDataStore que he creado en el editor aquí. "GlobalMusicStore"
+
     public List<BeatStep> score = new List<BeatStep>();
     private const string FILE_NAME = "MusicScore.json";
     private const int TOTAL_BEATS = 409; // 3:12 a 128 BPM
@@ -19,7 +22,8 @@ public class Composer : MonoBehaviour
     // Evento para que el tablero se actualice (pasa la matriz de 9 estados)
     public static event Action<int[]> OnGridUpdate;
     // Evento para indicar que el beat actual es puntuable (tiene un '7')
-    public static event Action<int> OnPuntuableBeat;
+    public static event Action<int, int> OnPuntuableBeat;
+    public static event Action<bool> LimpiarTableroEvent; // Para limpiar el tablero al empezar o terminar el juego, o entre partes de la canción
 
     [ContextMenu("Generar Plantilla 409 Beats")]
     public void GenerarPlantillaVacia()
@@ -40,15 +44,28 @@ public class Composer : MonoBehaviour
     {
         // Escuchamos al metrónomo (solo ocurre una vez por beat)
         Metronom.BeatEvent += HandleBeat;
+        Referee.GameEndEvent += HandleGameEnd;
     }
 
     private void OnDisable()
     {
         Metronom.BeatEvent -= HandleBeat;
+        Referee.GameEndEvent -= HandleGameEnd;
     }
 
+    private void HandleGameEnd(bool ended)
+    {
+        if (ended)
+        {
+            LimpiarTableroEvent?.Invoke(true);
+        }
+    }
+
+    // En cada beat, enviamos la configuración de ese beat al tablero para que actualice las casillas, y si es un beat puntuable, lanzamos el evento correspondiente
     private void HandleBeat(int currentBeat)
     {
+        if (musicStore.GetGameEnded()) return; // Si el juego ha terminado, no hacemos nada
+
         int index = currentBeat - 1;
 
         if (index >= 0 && index < score.Count)
@@ -59,7 +76,7 @@ public class Composer : MonoBehaviour
             // Si el beat actual tiene algún '7' lanzamos un evento de que es un beat puntuable
             if (Array.Exists(score[index].gridStates, state => state == 7))
             {
-                OnPuntuableBeat?.Invoke(currentBeat);
+                OnPuntuableBeat?.Invoke(currentBeat, Array.IndexOf(score[index].gridStates, 7)); // También pasamos la casilla que es el golpe para que el juez sepa cuál es el objetivo
             }
         }
     }
